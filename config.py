@@ -1,0 +1,3 @@
+URLS_FOR_PARSE = []
+LOGIN = ""
+PASSWORD = ""
