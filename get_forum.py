@@ -8,7 +8,7 @@ class LoginAndGet:
     cookies = {}
     data_for_login = {"login": "", "password": "", "remember_me": 1}
     data_login = {}
-    forum_url = "http://gta-trinity.ru/forum/"
+    forum_url = "https://gta-trinity.ru/forum/login"
 
     def __init__(self, login: str, password: str):
         try:

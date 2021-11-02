@@ -8,7 +8,8 @@ class Parser:
         self.forum = get_forum.LoginAndGet(config.LOGIN, config.PASSWORD)
 
     def parseUrls(self):
-        print(self.forum.get(config.TEST_URL))
+        for url in config.URLS_FOR_PARSE:
+            self.forum.get(url)
 
 p = Parser()
 p.parseUrls()
