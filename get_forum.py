@@ -44,7 +44,7 @@ class LoginAndGet:
             print("ERROR: In def Login")
             self.login()
         
-    def get(self, link: str, login: bool):
+    def get(self, link: str):
         r = None
         time.sleep(2)
         try:
@@ -63,27 +63,17 @@ class LoginAndGet:
                 print("Пхд форум лег: " + str(r.status_code))
         except Exception as err:
             print("ERROR: In method GET (without login): "+str(err))
-            self.getF(link, login)
+            self.getF(link)
             r = None
         with open("temp_json.html", "r", encoding="utf-8") as t:
             return t.read()
 
-    def post(self, link: str, login: bool, data: dict):
-        if login:
-            self.login()
-            try:
-                r = self.session.post(link, data)
-                print("LOG: POST With Login - OK")
-            except Exception:
-                print("ERROR: In method POST (with login)")
-                self.postF(link, login, data)
-                r = None
-        elif not login:
-            try:
-                r = self.session.post(link, data)
-                print("LOG: POST Without Login - OK")
-            except Exception:
-                print("ERROR: In method POST (without login)")
-                self.postF(link, login, data)
-                r = None
+    def post(self, link: str, data: dict):
+        try:
+            r = self.session.post(link, data)
+            print("LOG: POST Without Login - OK")
+        except Exception:
+            print("ERROR: In method POST (without login)")
+            self.postF(link, data)
+            r = None
         return r
