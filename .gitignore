@@ -138,3 +138,5 @@ dmypy.json
 cython_debug/
 
 config.py
+out.json
+temp_json.html
