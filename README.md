@@ -1,2 +1,3 @@
 # parse_admin_commands
-antiddos.py wrote papercut
+antiddos.py © pap1k
+aes.py mod © pap1k
